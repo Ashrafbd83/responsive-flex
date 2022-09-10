@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive using flex</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        width: 100%;
+        min-height: 100vh;
+        font-size: 45px;
+      }
+      .container {
+        display: flex;
+        gap: 4vh;
+        flex-direction: column;
+        padding: 4vh;
+        border: 1vh solid #48cae4;
+      }
+
+      [class^="block-"] {
+        display: flex;
+        height: calc((100vh - 20vh) / 3);
+        gap: 4vh;
+      }
+
+      [class^="box-"] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #c1c1c1;
+        border: 2px solid black;
+        border-radius: 10px;
+        flex-basis: calc(100% / 3);
+      }
+
+      @media (max-width: 500px) {
+        [class^="block-"] {
+          flex-direction: column;
+          height: 300px;
+          gap: 10px;
+        }
+      }
+    </style>
+
+    <!--todo HTML start -->
+    <section class="flex-first-practice">
+      <div class="container">
+        <div class="block-1">
+          <div class="box-1">A</div>
+          <div class="box-2">B</div>
+          <div class="box-3">C</div>
+        </div>
+        <div class="block-2">
+          <div class="box-4">D</div>
+          <div class="box-5">E</div>
+          <div class="box-6">F</div>
+        </div>
+        <div class="block-3">
+          <div class="box-7">G</div>
+          <div class="box-8">H</div>
+          <div class="box-9">I</div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
