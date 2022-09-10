@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rwsponsive design using flex box</title>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: serif;
+            font-size: 30px;
+            width: 100%;
+            min-height: 100vh;
+
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 4vh;
+            padding: 10px;
+        }
+
+        [class^="block-"] {
+            display: flex;
+            flex-direction: row;
+            height: calc((100vh - 12vh)/3);
+            gap: 4vh;
+        }
+
+        [class^="box-"] {
+            display: flex;
+            border: 1vh solid black;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .box-1 {
+            flex-basis: 100%;
+        }
+
+        .box-2,
+        .box-5 {
+            flex-basis: 70%;
+        }
+
+        .box-3,
+        .box-4 {
+            flex-basis: 30%;
+        }
+
+        @media (max-width:600px) {
+            .block-2 {
+                flex-direction: column;
+                flex-basis:66.66vh;
+            }
+
+            .box-2,
+            .box-3,
+            .box-4,
+            .box-5 {
+                flex-basis: 50%;
+            }
+
+        }
+    </style>
+
+    <div class="container">
+        <div class="block-1">
+            <div class="box-1">A</div>
+        </div>
+        <div class="block-2">
+            <div class="box-2">B</div>
+            <div class="box-3">E</div>
+        </div>
+        <div class="block-3">
+            <div class="box-4">C</div>
+            <div class="box-5">D</div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
